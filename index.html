@@ -3,107 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda de Productos</title>
+    <title>Sitio de Productos</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            position: relative;
+            min-height: 100vh;
         }
-
         header {
             background-color: #333;
-            color: white;
+            color: #fff;
+            padding: 10px 20px;
             text-align: center;
-            padding: 1rem 0;
         }
-
         .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
         }
-
         .product {
-            background: white;
+            background: #fff;
             border: 1px solid #ddd;
             border-radius: 5px;
-            padding: 1rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 15px;
         }
-
         .product img {
             max-width: 100%;
-            height: auto;
-            margin-bottom: 1rem;
+            max-height: 150px;
+            object-fit: contain;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 10px;
         }
-
-        .product h2 {
-            font-size: 1.5rem;
-            margin: 0.5rem 0;
+        .product h3 {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #333;
         }
-
         .product p {
-            font-size: 1.2rem;
-            color: #555;
+            color: #666;
         }
-
-        .product input[type="file"] {
-            margin-top: 1rem;
+        .product .price {
+            font-size: 1.5em;
+            color: #333;
+            margin-top: 10px;
+        }
+        .footer-content {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            text-align: center;
+            font-size: 0.9em;
+            background: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .footer-content img {
+            max-width: 100px;
+            display: block;
+            margin: 0 auto 5px;
+        }
+        .footer-content a {
+            color: #333;
+            text-decoration: none;
+        }
+        .footer-content a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Tienda de Productos</h1>
+        <h1>Lista de Productos</h1>
     </header>
-
-    <div class="container">
-        <div id="product-list"></div>
+    <main class="container">
+        <div class="product">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5b20356229cb46d88da156b1d33e4fa9X/Llavero-acr-lico-del-Se-or-de-los-misteriosos-colgante-de-Anime-Klein-Moretti-soporte-de.jpeg_220x220q75.jpeg_.avif" alt="Llavero del Señor de los Misterios">
+            <h3>Llavero acrílico del Señor de los misteriosos</h3>
+            <p>Cada unidad</p>
+            <div class="price">70 puntos</div>
+        </div>
+        <div class="product">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sf970f37c22074fa3b3e16bc814fddfdcB.jpg_220x220q75.jpg_.avif" alt="Producto 2">
+            <h3>Cartera de Snoopy</h3>
+            <p></p>
+            <div class="price">85 puntos</div>
+        </div>
+        <div class="product">
+            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1598845986i/55176693.jpg" alt="El Señor de los Misterios Volumen 1">
+            <h3>El Señor de los Misterios Volumen 1: Payaso (digital)</h3>
+            <p>Edición digital</p>
+            <div class="price">70 puntos</div>
+        </div>
+        <div class="product">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6eb21d3e6331478992984c15bfc05577A.jpg_640x640.jpg_.webp" alt="Producto 4">
+            <h3>Tamagotchi-juego</h3>
+            <p>Una unidad</p>
+            <div class="price">120 puntos</div>
+        </div>
+        <div class="product">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S004764b8f9784086a41cedf709dba80fL/Caja-de-m-sica-ligera-colgante-de-m-sica-de-Metal-compacto-personalizado-grabadora-de-sonido.jpg_220x220q75.jpg_.avif" alt="Producto 5">
+            <h3>Caja de música ligera, colgante de música de Metal compacto personalizado</h3>
+            <p></p>
+            <div class="price">90 puntos</div>
+        </div>
+        <div class="product">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Ha4a06671cb754570b064cc93fca6292ak.jpg_640x640.jpg_.webp" alt="Producto 6">
+            <h3>Lápiz mecánico de una pieza7</h3>
+            <p>Una unidad</p>
+            <div class="price">50 puntos</div>
+        </div>
+        <div class="product">
+            <img src="https://m.media-amazon.com/images/I/51Lt5-WseuL._AC_SX679_.jpg" alt="Producto 9">
+            <h3>LEGO Marvel Series 2 Minifigure: Moon Knight</h3>
+            <p>Descripción breve del producto 9</p>
+            <div class="price">250 puntos</div>
+        </div>
+        <div class="product">
+            <img src="https://i.etsystatic.com/20020061/r/il/96c725/5354677587/il_794xN.5354677587_f9z6.jpg" alt="Reloj de bolsillo Omniscient Reader's Viewpoint">
+            <h3>Reloj de bolsillo Omniscient Reader's Viewpoint</h3>
+            <p></p>
+            <div class="price">500 puntos</div>
+        </div>
+    </main>
+    <div class="footer-content">
+        <img src="https://i.postimg.cc/k5fVRxnL/Whats-App-Image-2024-12-15-at-09-50-02.jpg" alt="QR Code">
+        <a href="https://example.com" target="_blank">Contactenos para su compra</a>
     </div>
-
-    <script>
-        // Productos iniciales
-        const products = [
-            { id: 1, name: "Producto 1", price: 40 },
-            { id: 2, name: "Producto 2", price: 50 },
-            { id: 3, name: "Producto 3", price: 60 },
-            { id: 4, name: "Producto 4", price: 70 },
-            { id: 5, name: "Producto 5", price: 80 },
-            { id: 6, name: "Producto 6", price: 90 },
-            { id: 7, name: "Producto 7", price: 100 },
-            { id: 8, name: "Producto 8", price: 110 },
-            { id: 9, name: "Producto 9", price: 120 },
-            { id: 10, name: "Producto 10", price: 150 }
-        ];
-
-        const productList = document.getElementById("product-list");
-
-        products.forEach(product => {
-            const productDiv = document.createElement("div");
-            productDiv.className = "product";
-            productDiv.innerHTML = `
-                <h2>${product.name}</h2>
-                <p>Precio: ${product.price} puntos</p>
-                <img src="" alt="Imagen del producto ${product.id}" id="img-${product.id}">
-                <input type="file" accept="image/*" onchange="loadImage(event, ${product.id})">
-            `;
-            productList.appendChild(productDiv);
-        });
-
-        function loadImage(event, id) {
-            const reader = new FileReader();
-            reader.onload = function () {
-                const image = document.getElementById(`img-${id}`);
-                image.src = reader.result;
-            };
-            reader.readAsDataURL(event.target.files[0]);
-        }
-    </script>
 </body>
 </html>
