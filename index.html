@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Productos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .product {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .product h2 {
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .product p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .product input[type="file"] {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tienda de Productos</h1>
+    </header>
+
+    <div class="container">
+        <div id="product-list"></div>
+    </div>
+
+    <script>
+        // Productos iniciales
+        const products = [
+            { id: 1, name: "Producto 1", price: 40 },
+            { id: 2, name: "Producto 2", price: 50 },
+            { id: 3, name: "Producto 3", price: 60 },
+            { id: 4, name: "Producto 4", price: 70 },
+            { id: 5, name: "Producto 5", price: 80 },
+            { id: 6, name: "Producto 6", price: 90 },
+            { id: 7, name: "Producto 7", price: 100 },
+            { id: 8, name: "Producto 8", price: 110 },
+            { id: 9, name: "Producto 9", price: 120 },
+            { id: 10, name: "Producto 10", price: 150 }
+        ];
+
+        const productList = document.getElementById("product-list");
+
+        products.forEach(product => {
+            const productDiv = document.createElement("div");
+            productDiv.className = "product";
+            productDiv.innerHTML = `
+                <h2>${product.name}</h2>
+                <p>Precio: ${product.price} puntos</p>
+                <img src="" alt="Imagen del producto ${product.id}" id="img-${product.id}">
+                <input type="file" accept="image/*" onchange="loadImage(event, ${product.id})">
+            `;
+            productList.appendChild(productDiv);
+        });
+
+        function loadImage(event, id) {
+            const reader = new FileReader();
+            reader.onload = function () {
+                const image = document.getElementById(`img-${id}`);
+                image.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+</html>
